@@ -634,8 +634,7 @@ header .wrapper-large {
 }
 
 .menu:hover .menu-bar:first-child::before {
-    transform: translateY(120px);
-    transform: rotateZ(45deg);
+    transform: translateY(16px) rotate(45deg);
 }
 
 .menu:hover .menu-bar:nth-child(2)::before {
@@ -643,8 +642,33 @@ header .wrapper-large {
 }
 
 .menu:hover .menu-bar:nth-child(3)::before {
-    transform: translateY(-120px);
-    transform: rotateZ(-45deg);
+    transform: translateY(-16px) rotate(-45deg);
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 5%;
+}
+
+.nav-item a {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.active-nav a,
+.nav-item a:hover {
+    color: #f8cf3d;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
 }
 
 
