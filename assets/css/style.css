@@ -437,7 +437,6 @@ li {
     margin: 0 auto;
 }
 
-<<<<<<< HEAD
 .wrapper-large {
     width: 100%;
 }
@@ -633,8 +632,6 @@ input[name=searchBtn] {
 
 /*upper header ends here*/
 
-=======
->>>>>>> dev
 
 /* navbar start here */
 
@@ -1045,7 +1042,7 @@ header .wrapper-large {
 /* testimonial start here */
 
 .testimonial {
-    padding: 128px 0;
+    padding: 128px 0 140px 0;
 }
 
 .testimonial .sub-title,
@@ -1152,6 +1149,42 @@ header .wrapper-large {
 
 
 /* testimonial end here */
+
+
+/* blog start here */
+
+.cards {
+    display: flex;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card:nth-child(2) {
+    margin: 0 3%;
+}
+
+.card figure {
+    width: 100%;
+    min-height: 187px;
+    max-height: 187px;
+    position: relative;
+}
+
+.card figure img {
+    height: 100%;
+}
+
+.date-stamp {
+    position: absolute;
+    bottom: 0;
+    background-color: #4f9526;
+}
+
+
+/* blog end here */
 
 
 /*=================================
