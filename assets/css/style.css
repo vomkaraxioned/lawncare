@@ -1153,6 +1153,10 @@ header .wrapper-large {
 
 /* blog start here */
 
+.blog {
+    padding-bottom: 126px;
+}
+
 .cards {
     display: flex;
 }
@@ -1178,9 +1182,64 @@ header .wrapper-large {
 }
 
 .date-stamp {
+    padding: 5px 5%;
+    border-radius: 2px;
+    display: flex;
     position: absolute;
+    left: 5%;
     bottom: 0;
     background-color: #4f9526;
+    color: #fff;
+    font-size: 12px;
+}
+
+.date-stamp::before {
+    position: absolute;
+    left: 45%;
+    bottom: -12px;
+    color: #4f9526;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    font-size: 21px;
+    content: '\f0d7';
+}
+
+.date {
+    display: flex;
+    font-size: 28px;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+}
+
+.mont-year {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mont-year span {
+    padding-bottom: 5px;
+}
+
+.blog .card .title {
+    width: 80%;
+    padding: 15px 0 5px 0;
+    font-size: 12px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.blog .description {
+    width: 80%;
+    padding-bottom: 15px;
+    line-height: 1.5;
+}
+
+.btn-read-more {
+    width: 35%;
+    padding: 6px 0;
+    text-align: center;
 }
 
 
