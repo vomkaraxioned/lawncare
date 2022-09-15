@@ -1474,6 +1474,101 @@ footer .copyright span::before {
 /*========index page ends========*/
 
 
+/*banner start */
+
+.gallery-banner {
+    padding: 224px 0 50px 0;
+    background: url('../images/bg_2.jpg') center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.gallery-banner .title {
+    padding-bottom: 20px;
+    color: #fff;
+    font-size: 42px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.gallery-banner .gallery-nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-banner .nav-item a {
+    color: #cdcdcd;
+}
+
+.gallery-banner .nav-item:nth-child(2) a {
+    color: #777;
+}
+
+.gallery-banner .nav-item a:hover {
+    color: #f8cf3d;
+}
+
+.gallery-banner .nav-item a::after {
+    margin-left: 2%;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    content: '\f105';
+}
+
+
+/*banner end */
+
+
+/*gallery start here */
+
+.gallery .gallery-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery .gallery-item {
+    flex-basis: 33.3%;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery .gallery-item figure {
+    width: 100%;
+}
+
+.gallery .gallery-item img {
+    height: 100%;
+}
+
+.gallery .category,
+.gallery .image-name {
+    position: absolute;
+    left: 7%;
+    color: #fff;
+    font-size: 16px;
+}
+
+.gallery .category {
+    bottom: 40px;
+    font-size: 12px;
+}
+
+.gallery .image-name {
+    bottom: 15px;
+}
+
+
+/*gallery end here */
+
+
+/*========gallery page start here========*/
+
+
+/*========gallery page end here========*/
+
+
 /*media query starts*/
 
 
