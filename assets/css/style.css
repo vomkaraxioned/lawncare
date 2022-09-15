@@ -1652,10 +1652,40 @@ footer .copyright span::before {
 
 .form-section .contact-form {
     flex-basis: 60%;
+    padding: 40px 0;
+}
+
+.form-section .title {
+    padding-bottom: 30px;
+    color: #454545;
+    font-size: 21px;
+    text-transform: capitalize;
+}
+
+.form-section .description {
+    padding-bottom: 20px;
 }
 
 .form-section figure {
     flex-basis: 40%;
+}
+
+label {
+    color: #396c1b;
+    font-size: 10px;
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field:first-child {
+    display: flex;
 }
 
 
