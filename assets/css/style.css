@@ -774,13 +774,13 @@ header .wrapper-large {
     display: flex;
 }
 
-.services {
+.lawn-services .services {
     flex-basis: 75%;
     margin-right: 5%;
     display: flex;
 }
 
-.service {
+.lawn-services .service {
     box-shadow: 1px 1px 10px 0#cdcdcd;
     padding: 17px 0 32px 0;
     display: flex;
@@ -1246,14 +1246,232 @@ header .wrapper-large {
 /* blog end here */
 
 
+/* subscribe section */
+
+.subscribe-to-letter {
+    padding: 16px 0;
+    background-color: #4f9526;
+}
+
+.subscribe-to-letter .wrapper {
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe-to-letter .title {
+    margin-right: 5%;
+    color: #fff;
+    font-size: 21px;
+}
+
+.subscribe-to-letter .subscribe {
+    flex-basis: 30%;
+}
+
+.subscribe-to-letter form {
+    width: 100%;
+    display: flex;
+}
+
+.subscribe-to-letter .subscribe-input {
+    flex-basis: 70%;
+    display: flex;
+}
+
+.subscribe-to-letter input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.subscribe-to-letter input[type=text] {
+    padding: 12px 5%;
+    border-radius: 3px 0 0 3px;
+}
+
+.subscribe-to-letter input[name=subscribe] {
+    padding: 12px 0;
+    border-radius: 0 3px 3px 0;
+    background-color: #396c1b;
+    color: #fff;
+}
+
+.subscribe-to-letter input[name=subscribe]:hover {
+    color: #000;
+}
+
+.subscribe-to-letter .subscribe-btn {
+    flex: 1;
+    display: flex;
+}
+
+
+/* subscribe section */
+
+
 /*=================================
   footer styling starts here
 =================================*/
+
+footer {
+    padding: 50px 0;
+    background-color: #252525;
+}
+
+.upper-footer {
+    padding-bottom: 30px;
+    display: flex;
+}
+
+.upper-footer .small-description {
+    flex-basis: 35%;
+}
+
+.upper-footer .logo {
+    padding-bottom: 31px;
+    justify-content: left;
+}
+
+.upper-footer .logo a {
+    color: #fff;
+}
+
+.pages {
+    flex: 1;
+    display: flex;
+    color: #fff;
+    font-size: 16px;
+}
+
+.upper-footer .description {
+    width: 75%;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.upper-footer .services {
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-footer .pages .page {
+    flex-basis: 32%;
+    margin-bottom: 10px;
+}
+
+.upper-footer .page .service {
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+.upper-footer .service::before {
+    margin-right: 2%;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    content: '\f105';
+}
+
+.upper-footer .service .dropDown {
+    display: none;
+    flex-direction: column;
+}
+
+.upper-footer .service:hover .dropDown {
+    display: flex;
+    z-index: -1;
+}
+
+.upper-footer .service .dropDown .page {
+    padding: 5px 10%;
+    margin-bottom: 0;
+}
+
+.upper-footer .page .title {
+    padding-bottom: 35px;
+}
+
+.upper-footer .page a {
+    color: #fff;
+}
+
+.upper-footer .page a:hover {
+    color: #396c1b;
+}
+
+.upper-footer .contact-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper-footer .contact-link {
+    margin-bottom: 10px;
+}
+
+.upper-footer .contact-link a::before {
+    margin-right: 10%;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+}
+
+.upper-footer .contact-link:first-child a::before {
+    content: '\f3c5';
+}
+
+.upper-footer .contact-link:nth-child(2) a::before {
+    content: '\f095';
+}
+
+.upper-footer .contact-link:nth-child(3) a::before {
+    content: '\f0e0';
+}
+
+.upper-footer .page:last-child .sub-title-highlight {
+    color: #f8cf3d;
+    font-size: 12px;
+}
+
+footer .social-link {
+    margin-right: 2%;
+}
+
+footer .social-link a:before {
+    background-color: #303030;
+    color: #fff;
+}
+
+footer .copyright {
+    padding-top: 50px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+footer .copyright span {
+    display: inline-block;
+    text-indent: -9999px;
+}
+
+footer .copyright span::before {
+    margin: 0 20%;
+    float: right;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    text-indent: 0;
+    content: '\f004';
+}
 
 
 /*=================================
   footer styling ends here
 =================================*/
+
+
+/*========index page ends========*/
 
 
 /*media query starts*/
@@ -1262,6 +1480,3 @@ header .wrapper-large {
 /*media query for 995px starts here*/
 
 @media only screen and (max-width: 995px) {}
-
-
-/*========index page ends========*/
