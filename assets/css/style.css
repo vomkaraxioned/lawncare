@@ -1476,14 +1476,16 @@ footer .copyright span::before {
 
 /*banner start */
 
-.gallery-banner {
+.gallery-banner,
+.contact-banner {
     padding: 224px 0 50px 0;
     background: url('../images/bg_2.jpg') center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
-.gallery-banner .title {
+.gallery-banner .title,
+.contact-banner .title {
     padding-bottom: 20px;
     color: #fff;
     font-size: 42px;
@@ -1491,25 +1493,37 @@ footer .copyright span::before {
     text-align: center;
 }
 
-.gallery-banner .gallery-nav-items {
+.gallery-banner .gallery-nav-items,
+.contact-banner .gallery-nav-items {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.gallery-banner .nav-item a {
-    color: #cdcdcd;
+.gallery-banner .nav-item,
+.contact-banner .nav-item {
+    flex-basis: 10%;
 }
 
-.gallery-banner .nav-item:nth-child(2) a {
+.gallery-banner .nav-item a,
+.contact-banner .nav-item a {
+    width: 100%;
+    color: #cdcdcd;
+    text-align: center;
+}
+
+.gallery-banner .nav-item:nth-child(2) a,
+.contact-banner .nav-item:nth-child(2) a {
     color: #777;
 }
 
-.gallery-banner .nav-item a:hover {
+.gallery-banner .nav-item a:hover,
+.contact-banner .nav-item a:hover {
     color: #f8cf3d;
 }
 
-.gallery-banner .nav-item a::after {
+.gallery-banner .nav-item a::after,
+.contact-banner .nav-item a::after {
     margin-left: 2%;
     font-family: 'FontAwesome';
     font-weight: 900;
@@ -1563,10 +1577,92 @@ footer .copyright span::before {
 /*gallery end here */
 
 
-/*========gallery page start here========*/
+/*contact start here */
+
+.contact-form-section {
+    padding: 78px 0;
+}
+
+.contacts {
+    padding-bottom: 58px;
+    display: flex;
+}
+
+.contact {
+    flex-basis: 60%;
+    padding-top: 64px;
+    margin-right: 2%;
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+}
+
+.contact:last-child {
+    margin-right: 0;
+}
+
+.contact a {
+    display: inline;
+    color: #396c1b;
+    font-size: 12px;
+}
+
+.contact a::before {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 45%;
+    background-color: #4f9526;
+    color: #fff;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact:first-child a::before {
+    content: '\f3c5';
+}
+
+.contact:nth-child(2) a::before {
+    content: '\f095';
+}
+
+.contact:nth-child(3) a::before {
+    content: '\f1d8';
+}
+
+.contact:nth-child(4) a::before {
+    content: '\f0ac';
+}
+
+.contact a:hover {
+    color: #303030;
+}
 
 
-/*========gallery page end here========*/
+/* form  start*/
+
+.form-section {
+    display: flex;
+}
+
+.form-section .contact-form {
+    flex-basis: 60%;
+}
+
+.form-section figure {
+    flex-basis: 40%;
+}
+
+
+/* form  end*/
+
+
+/*contact end here */
 
 
 /*media query starts*/
