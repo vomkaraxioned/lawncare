@@ -11,13 +11,15 @@ let scrollIterator = currentSliderPosition = 0;
 
 /*=====slider start here=====*/
 // adding event listener to control button
-
-sliderControls.forEach((btn, i) => {
-    btn.index = i;
-    btn.addEventListener("click", () => {
-        scrollIterator = btn.index;
+function addListener() {
+    sliderControls.forEach((btn, i) => {
+        btn.index = i;
+        btn.addEventListener("click", () => {
+            scrollIterator = btn.index;
+            sliderSliding();
+        });
     });
-});
+}
 // code for slider
 sliderControls[0].classList.add("control-active");
 
@@ -44,7 +46,7 @@ function sliderSliding() {
 function addSliderControls() {
     i = 0;
     sliderControls.innerHTML = "";
-    while (i < slidesLength) {
+    while (i < slides.children.length) {
         newControlBtn = document.createElement("button");
         newControlBtn.innerHTML = "a";
         newControlBtn.classList.add("btn-control");
