@@ -441,6 +441,10 @@ li {
     width: 100%;
 }
 
+a {
+    transition: all 1s;
+}
+
 
 /*========index page start========*/
 
@@ -1823,13 +1827,13 @@ label {
     header .nav-items {
         width: 100%;
         display: none;
+        z-index: 1;
         position: absolute;
         right: 0;
         flex-direction: column;
         background-color: #4f9526;
         justify-content: center;
         align-items: center;
-        z-index: 1;
     }
     header .nav-item {
         width: 80%;
