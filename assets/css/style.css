@@ -659,18 +659,6 @@ header .wrapper-large {
     transition: all 1s;
 }
 
-.menu:hover .menu-bar:first-child::before {
-    transform: translateY(16px) rotate(45deg);
-}
-
-.menu:hover .menu-bar:nth-child(2)::before {
-    display: none;
-}
-
-.menu:hover .menu-bar:nth-child(3)::before {
-    transform: translateY(-16px) rotate(-45deg);
-}
-
 .nav-items {
     display: flex;
     justify-content: center;
@@ -1804,4 +1792,160 @@ label {
         padding-bottom: 40px;
     }
     /*contact end here*/
+}
+
+
+/*media query for 768px starts here*/
+
+@media only screen and (max-width: 768px) {
+    /* home page start  */
+    header .upper-header {
+        padding: 20px 0;
+    }
+    header .upper-header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header .social-links {
+        order: 1;
+    }
+    header .search-field {
+        width: 80%;
+        padding: 20px 0;
+    }
+    header .search-btn {
+        flex-basis: 15%;
+    }
+    header .menu {
+        display: flex;
+        position: relative;
+    }
+    header .nav-items {
+        width: 100%;
+        display: none;
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        background-color: #4f9526;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    header .nav-item {
+        width: 80%;
+        margin: 10px 0;
+        text-align: center;
+    }
+    header .menu {
+        margin-top: 10px;
+    }
+    .menu:hover .menu-bar:first-child::before,
+    .menu-active {
+        transform: translateY(16px) rotate(45deg);
+    }
+    .menu:hover .menu-bar:nth-child(2)::before,
+    .menu-active {
+        display: none;
+    }
+    .menu:hover .menu-bar:nth-child(3)::before,
+    .menu-active {
+        transform: translateY(-16px) rotate(-45deg);
+    }
+    .menu:hover~.nav-items {
+        display: flex;
+    }
+    header .wrapper-large {
+        padding: 5px 0;
+    }
+    .lawn-services .services-provided {
+        flex-direction: column;
+    }
+    .lawn-services .services {
+        width: 60%;
+        margin: 0 auto 30px auto;
+        flex-direction: column;
+    }
+    .lawn-services .service:nth-child(2) {
+        margin: 30px 0;
+    }
+    .lawn-service .get-quote {
+        margin: 0 auto;
+    }
+    .contact-us {
+        padding: 25px 0;
+    }
+    .contact-us .wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-us .contact-description {
+        padding-bottom: 15px;
+        text-align: center;
+    }
+    .testimonial .title,
+    .blog .title {
+        padding-bottom: 40px;
+    }
+    .testimonial {
+        padding: 80px 0;
+    }
+    .testimonial .feedback {
+        flex-basis: 40%;
+        margin: 0 30%;
+        justify-content: center;
+        align-items: center;
+    }
+    .blog {
+        padding-bottom: 80px;
+    }
+    .blog .cards {
+        flex-direction: column;
+    }
+    .blog .card figure {
+        min-height: 200px;
+        max-height: 200px;
+        /* overflow: hidden; */
+    }
+    .blog .card figure img {
+        height: 200px;
+    }
+    .blog .card:nth-child(2) {
+        margin: 30px 0;
+    }
+    .blog .date-stamp {
+        bottom: 20;
+    }
+    .subscribe-to-letter .wrapper {
+        flex-direction: column;
+    }
+    .subscribe-to-letter .title {
+        padding-bottom: 20px;
+        margin-right: 0;
+    }
+    footer {
+        padding: 40px 0;
+    }
+    footer .upper-footer,
+    footer .pages {
+        flex-direction: column;
+        justify-content: center;
+    }
+    footer .social-links {
+        justify-content: center;
+    }
+    footer .pages .page:nth-child(2) a {
+        margin-left: 7%;
+    }
+    footer .service a {
+        font-size: 12px;
+    }
+    .upper-footer .contact-link a {
+        width: 70%;
+    }
+    .upper-footer .pages .page {
+        margin: 15px 0;
+    }
+    /* home page end */
 }
