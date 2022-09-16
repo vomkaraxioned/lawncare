@@ -741,7 +741,7 @@ header .wrapper-large {
 
 .learn-btn::before {
     position: absolute;
-    right: 15%;
+    right: 10%;
     font-family: 'FontAwesome';
     font-weight: 900;
     content: '\f105';
@@ -964,7 +964,6 @@ header .wrapper-large {
 .know-about a:hover {
     background-color: #4f9526;
     color: #fff;
-    font-weight: 700;
 }
 
 .active-about a::before,
@@ -1082,6 +1081,7 @@ header .wrapper-large {
 
 .testimonial .client {
     display: flex;
+    align-items: center
 }
 
 .testimonial .client figure {
@@ -1785,7 +1785,6 @@ label {
     .contact-form-section .contacts {
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
     }
     .contact-form-section .contact {
         flex-basis: 40%;
@@ -1906,7 +1905,6 @@ label {
     .blog .card figure {
         min-height: 200px;
         max-height: 200px;
-        /* overflow: hidden; */
     }
     .blog .card figure img {
         height: 200px;
@@ -1948,4 +1946,74 @@ label {
         margin: 15px 0;
     }
     /* home page end */
+    /* gallery start here */
+    .gallery .gallery-item {
+        flex-basis: 50%;
+    }
+    .gallery .gallery-item:last-child {
+        flex-basis: 100%;
+    }
+    /* gallery end here */
+    /* contact start */
+    .contact-form-section {
+        padding: 40px 0;
+    }
+    .form-section {
+        flex-direction: column;
+    }
+    /* contact end here */
+}
+
+
+/*media query for 540px starts here*/
+
+@media only screen and (max-width: 540px) {
+    header .search-btn {
+        flex-basis: 25%;
+    }
+    .banner .title {
+        width: 80%;
+    }
+    .learn-btn {
+        padding: 10px 5%;
+    }
+    .lawn-services .services {
+        width: 80%;
+    }
+    .company-description .wrapper {
+        flex-direction: column;
+    }
+    .company-description figure {
+        min-height: 0;
+    }
+    .know-about a {
+        font-size: 12px;
+    }
+    .contact-us .contact a {
+        font-size: 26px;
+    }
+    .testimonial .client figure {
+        width: 80px;
+        height: 55px;
+    }
+    /* gallery start here */
+    .gallery .gallery-item {
+        flex-basis: 100%;
+    }
+    /* gallery end here */
+    /* contact start here  */
+    .contact-form-section .contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-section .contact-form {
+        padding: 40px 0;
+    }
+    .form-section .input-fields {
+        width: 100%;
+    }
+    .contacts {
+        padding-bottom: 30px;
+    }
+    /* contact end here */
 }
