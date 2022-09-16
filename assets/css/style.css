@@ -1955,6 +1955,10 @@ label {
     }
     /* gallery end here */
     /* contact start */
+    .gallery-banner .nav-item,
+    .contact-banner .nav-item {
+        flex-basis: 25%;
+    }
     .contact-form-section {
         padding: 40px 0;
     }
@@ -2002,6 +2006,10 @@ label {
     }
     /* gallery end here */
     /* contact start here  */
+    .gallery-banner .nav-item,
+    .contact-banner .nav-item {
+        flex-basis: 40%;
+    }
     .contact-form-section .contacts {
         flex-direction: column;
         align-items: center;
