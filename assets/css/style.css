@@ -1695,6 +1695,10 @@ footer .copyright span::before {
     flex-basis: 40%;
 }
 
+.form-section figure img {
+    height: 100%;
+}
+
 label {
     color: #396c1b;
     font-size: 10px;
@@ -1790,5 +1794,14 @@ label {
     }
     /* home page end here */
     /*contact start here*/
+    .contact-form-section .contacts {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-form-section .contact {
+        flex-basis: 40%;
+        padding-bottom: 40px;
+    }
     /*contact end here*/
 }
