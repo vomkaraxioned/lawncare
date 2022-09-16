@@ -1738,8 +1738,8 @@ label {
     outline: none;
 }
 
-input:focus,
-textarea:focus {
+.form-section input:focus,
+.form-section textarea:focus {
     box-shadow: inset 1px 1px 5px 1px #f8cf3d;
     border: none;
     outline: none;
@@ -1767,4 +1767,28 @@ textarea:focus {
 
 /*media query for 995px starts here*/
 
-@media only screen and (max-width: 995px) {}
+@media only screen and (max-width: 995px) {
+    /* home page start here */
+    .wrapper {
+        width: 70%;
+    }
+    header .social-links,
+    header .logo,
+    header .search-field,
+    header .search-btn {
+        flex-basis: 30%;
+    }
+    .social-link a::before {
+        width: 30px;
+        height: 30px;
+    }
+    .learn-btn::before {
+        right: 5%;
+    }
+    .btn-read-more {
+        width: 40%;
+    }
+    /* home page end here */
+    /*contact start here*/
+    /*contact end here*/
+}
