@@ -2,19 +2,26 @@
 
 */
 /*global variables declared and initialize here*/
+
 //variables for slider
 const slides = document.querySelector(".feedbacks");
-let sliderControls = document.querySelectorAll(".btn-control");
-let slidesLength = sliderControls.length;
-let sliderLength = slides.children.length * innerWidth;
-let i, newControlBtn, activeControl;
-let scrollIterator = currentSliderPosition = 0;
-//variables for modal 
+let sliderControls, slidesLength, sliderLength, i, newControlBtn, activeControl,screenWidth,scrollIterator = currentSliderPosition = 0;
+//variables for footer modal 
+const footerModalControls = document.querySelectorAll("footer .service a");
+const footerModal = document.querySelectorAll("footer .service .dropDown");
+let activeFooterModal;
 //variables for gallery modal
 //variables for form
+const contactForm = document.querySelector(".form-section form");
+//variables for navbar
+
 /*=====slider start here=====*/
 // adding event listener to control button
 function addListener() {
+    screenWidth = innerWidth;
+    sliderControls = document.querySelectorAll(".btn-control");
+    slidesLength = sliderControls.length;
+    sliderLength = slides.children.length * innerWidth;
     sliderControls.forEach((btn, i) => {
         btn.index = i;
         btn.addEventListener("click", () => {
@@ -22,15 +29,16 @@ function addListener() {
             sliderSliding();
         });
     });
+    if(screenWidth <= 768) {
+        addSliderControls();
+    }
 }
 // code for slider
-sliderControls[0].classList.add("control-active");
 
 function sliderSliding() {
-    sliderControls = document.querySelector(".controls");
     activeControl = document.querySelector(".control-active");
-    if (innerWidth <= 768) {
-        addSliderControls();
+    if (innerWidth != screenWidth) {
+        addListener();
     }
     if (currentSliderPosition >= sliderLength) {
         currentSliderPosition = 0;
@@ -39,7 +47,7 @@ function sliderSliding() {
         scrollIterator = 0;
     }
     activeControl.classList.remove("control-active");
-    sliderControls.children[scrollIterator].classList.add("control-active");
+    sliderControls[scrollIterator].classList.add("control-active");
     slides.scrollLeft = currentSliderPosition;
     currentSliderPosition = scrollIterator * innerWidth;
     scrollIterator++;
@@ -48,6 +56,7 @@ function sliderSliding() {
 // method to add buttons for small screen
 function addSliderControls() {
     i = 0;
+    sliderControls = document.querySelector(".controls");
     sliderControls.innerHTML = "";
     while (i < slides.children.length) {
         newControlBtn = document.createElement("button");
@@ -56,6 +65,32 @@ function addSliderControls() {
         sliderControls.appendChild(newControlBtn);
         i++;
     }
+    addListener();
 }
-setInterval(sliderSliding, 1500);
+addListener();
+sliderControls[0].classList.add("control-active");
+setInterval(sliderSliding, 2000);
 /*=====slider ends here=====*/
+
+/*=====footer modal start here=====*/
+footerModalControls.forEach((m,i)=>{
+    m.addEventListener("click",(e)=>{
+        if(e.target == m){
+            if(activeFooterModal != undefined){
+                footerModal[activeFooterModal].style.display = "none";
+            }
+            footerModal[i].style.display = "flex";
+            activeFooterModal = i;
+        }else {
+            footerModal[activeFooterModal].style.display = "none";
+        }
+    });
+});
+/*=====footer modal end here=====*/
+
+/*=====form validation start here=====*/
+contactForm.addEventListener("submit",(e)=>{
+    alert("ji");
+    e.preventDefault();
+});
+/*=====form validation end here=====*/

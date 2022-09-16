@@ -1380,14 +1380,14 @@ footer {
 .upper-footer .service .dropDown {
     width: 100%;
     display: none;
+    z-index: 1;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     flex-direction: column;
 }
 
-.upper-footer .service:hover .dropDown {
+.upper-footer .service:hover .dropDown{
     display: flex;
-    z-index: 1;
 }
 
 .upper-footer .service .dropDown .page {
