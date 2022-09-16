@@ -2,13 +2,16 @@
 
 */
 /*global variables declared and initialize here*/
+//variables for slider
 const slides = document.querySelector(".feedbacks");
 let sliderControls = document.querySelectorAll(".btn-control");
 let slidesLength = sliderControls.length;
 let sliderLength = slides.children.length * innerWidth;
 let i, newControlBtn, activeControl;
 let scrollIterator = currentSliderPosition = 0;
-
+//variables for modal 
+//variables for gallery modal
+//variables for form
 /*=====slider start here=====*/
 // adding event listener to control button
 function addListener() {
