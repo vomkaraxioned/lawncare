@@ -5,7 +5,8 @@
 
 //variables for slider
 const slides = document.querySelector(".feedbacks");
-let sliderControls, slidesLength, sliderLength, i, newControlBtn, activeControl,screenWidth,sliderCall,scrollIterator = currentSliderPosition = 0;
+const sliderControlsBox = document.querySelector(".controls");
+let sliderControls, slidesLength, sliderLength, i, newControlBtn,controlsNumber, activeControl,screenWidth,sliderCall,scrollIterator = currentSliderPosition = 0;
 //variables for footer modal 
 const footerModalControls = document.querySelectorAll("footer .service a");
 const footerModal = document.querySelectorAll("footer .service .dropDown");
@@ -108,7 +109,6 @@ if(document.title == "Contact"){
 /*=====slider start here=====*/
 // adding event listener to control button
 function addListener() {
-    screenWidth = innerWidth;
     sliderControls = document.querySelectorAll(".btn-control");
     slidesLength = sliderControls.length;
     sliderLength = slides.children.length * innerWidth;
@@ -116,10 +116,20 @@ function addListener() {
         btn.index = i;
         btn.addEventListener("click", () => {
             scrollIterator = btn.index;
+            clearInterval(sliderCall);
             sliderSliding();
         });
     });
+    sliderControls[scrollIterator].classList.add("control-active");
+}
+function checkerToAddBtn() {
+    screenWidth = innerWidth;
     if(screenWidth <= 768) {
+        controlsNumber = slides.children.length;
+        addSliderControls();
+    }
+    else {
+        controlsNumber = 5;
         addSliderControls();
     }
 }
@@ -128,7 +138,7 @@ function addListener() {
 function sliderSliding() {
     activeControl = document.querySelector(".control-active");
     if (innerWidth != screenWidth) {
-        addListener();
+        checkerToAddBtn();
     }
     if (currentSliderPosition >= sliderLength) {
         currentSliderPosition = 0;
@@ -146,21 +156,20 @@ function sliderSliding() {
 // method to add buttons for small screen
 function addSliderControls() {
     i = 0;
-    sliderControls = document.querySelector(".controls");
-    sliderControls.innerHTML = "";
-    while (i < slides.children.length) {
+    sliderControlsBox.innerHTML = "";
+    while (i < controlsNumber) {
         newControlBtn = document.createElement("button");
         newControlBtn.innerHTML = "a";
         newControlBtn.classList.add("btn-control");
-        sliderControls.appendChild(newControlBtn);
+        sliderControlsBox.appendChild(newControlBtn);
         i++;
     }
     addListener();
 }
 if(document.title == "Home"){
- addListener();
-sliderControls[0].classList.add("control-active");
-sliderCall =setInterval(sliderSliding, 2000);
+    checkerToAddBtn();
+    addListener();
+    sliderCall =setInterval(sliderSliding, 2000);
 }
 /*=====slider ends here=====*/
 
