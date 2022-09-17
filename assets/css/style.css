@@ -1019,7 +1019,7 @@ header .wrapper-large {
 
 .contact-us .contact a {
     color: #f8cf3d;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
 }
 
@@ -1380,14 +1380,14 @@ footer {
 .upper-footer .service .dropDown {
     width: 100%;
     display: none;
+    z-index: 1;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     flex-direction: column;
 }
 
-.upper-footer .service:hover .dropDown {
+.upper-footer .service:hover .dropDown{
     display: flex;
-    z-index: 1;
 }
 
 .upper-footer .service .dropDown .page {
@@ -1552,6 +1552,7 @@ footer .copyright span::before {
 .gallery .gallery-items {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .gallery .gallery-item {
@@ -1589,8 +1590,44 @@ footer .copyright span::before {
 .gallery .image-name {
     bottom: 15px;
 }
+.gallery-active-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
 
+}
+.gallery-active-item figure {
+    width: 70%;
+    margin: 0 auto;
+}
 
+.gallery-cancel {
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 10%;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    font-size: 21px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+.gallery-cancel::before {
+    float: right;
+    color: #fff;
+    text-indent: 0;
+    content: '\f00d';
+}
+.gallery-cancel:hover::before{
+    color: #4e9526;
+}
 /*gallery end here */
 
 
@@ -1734,7 +1771,8 @@ label {
     outline: none;
 }
 
-.form-section input:focus,
+.form-section input[type=text]:focus,
+.form-section input[type=email]:focus,
 .form-section textarea:focus {
     box-shadow: inset 1px 1px 5px 1px #f8cf3d;
     border: none;
@@ -1747,7 +1785,7 @@ label {
 
 .err {
     color: #f00;
-    font-size: 16px;
+    font-size: 12px;
     display: none;
 }
 
@@ -1843,20 +1881,14 @@ label {
     header .menu {
         margin-top: 10px;
     }
-    .menu:hover .menu-bar:first-child::before,
-    .menu-active {
+    .menu-active .menu-bar:first-child::before {
         transform: translateY(16px) rotate(45deg);
     }
-    .menu:hover .menu-bar:nth-child(2)::before,
-    .menu-active {
+    .menu-active .menu-bar:nth-child(2)::before {
         display: none;
     }
-    .menu:hover .menu-bar:nth-child(3)::before,
-    .menu-active {
+    .menu-active .menu-bar:nth-child(3)::before {
         transform: translateY(-16px) rotate(-45deg);
-    }
-    .menu:hover~.nav-items {
-        display: flex;
     }
     header .wrapper-large {
         padding: 5px 0;
@@ -1998,7 +2030,7 @@ label {
         font-size: 12px;
     }
     .contact-us .contact a {
-        font-size: 26px;
+        font-size: 21px;
     }
     .testimonial .client figure {
         width: 80px;
