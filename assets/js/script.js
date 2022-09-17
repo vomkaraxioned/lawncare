@@ -170,10 +170,17 @@ footerModalControls.forEach((m,i)=>{
         if(e.target == m){
             if(activeFooterModal != undefined){
                 footerModal[activeFooterModal].style.display = "none";
+                document.body.addEventListener("click",function footerModalOff(e){
+                    if(e.target != m ){
+                     footerModal[activeFooterModal].style.display = "none";
+                     document.body.removeEventListener("click",footerModalOff);
+                    }
+                 });
             }
             footerModal[i].style.display = "flex";
             activeFooterModal = i;
-        }else {
+        }
+        else {
             footerModal[activeFooterModal].style.display = "none";
         }
     });
