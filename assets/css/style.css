@@ -1771,7 +1771,8 @@ label {
     outline: none;
 }
 
-.form-section input:focus,
+.form-section input[type=text]:focus,
+.form-section input[type=email]:focus,
 .form-section textarea:focus {
     box-shadow: inset 1px 1px 5px 1px #f8cf3d;
     border: none;
@@ -1880,20 +1881,14 @@ label {
     header .menu {
         margin-top: 10px;
     }
-    .menu:hover .menu-bar:first-child::before,
-    .menu-active {
+    .menu-active .menu-bar:first-child::before {
         transform: translateY(16px) rotate(45deg);
     }
-    .menu:hover .menu-bar:nth-child(2)::before,
-    .menu-active {
+    .menu-active .menu-bar:nth-child(2)::before {
         display: none;
     }
-    .menu:hover .menu-bar:nth-child(3)::before,
-    .menu-active {
+    .menu-active .menu-bar:nth-child(3)::before {
         transform: translateY(-16px) rotate(-45deg);
-    }
-    .menu:hover~.nav-items {
-        display: flex;
     }
     header .wrapper-large {
         padding: 5px 0;

@@ -19,8 +19,9 @@ const contactForm = document.querySelector(".form-section form[name=contact-form
 const errorBox = document.querySelectorAll(".err");
 let userName,email,subject,message,valid,emailRe = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,textRe = /^[a-zA-Z\s]+$/;
 //variables for navbar
-
-
+const menu = document.querySelector(".menu");
+const navbar = document.querySelector("header .nav-items");
+menu.active = false ;
 
 /*=====footer modal end here=====*/
 
@@ -212,3 +213,17 @@ if(document.title == "Gallery"){
     });
 }
 /*=====gallery modal ends here=====*/
+
+/*=====nav items start  here=====*/
+menu.addEventListener("click",()=>{
+   if(!menu.active){
+    menu.active = true;
+    menu.classList.add("menu-active");
+    navbar.style.display = "flex";
+   }else {
+    menu.active = false;
+    menu.classList.remove("menu-active");
+    navbar.style.display = "none";
+   }
+});
+/*=====nav items ends  here=====*/
