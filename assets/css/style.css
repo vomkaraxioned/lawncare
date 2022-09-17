@@ -1019,7 +1019,7 @@ header .wrapper-large {
 
 .contact-us .contact a {
     color: #f8cf3d;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
 }
 
@@ -1552,6 +1552,7 @@ footer .copyright span::before {
 .gallery .gallery-items {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .gallery .gallery-item {
@@ -1589,8 +1590,44 @@ footer .copyright span::before {
 .gallery .image-name {
     bottom: 15px;
 }
+.gallery-active-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
 
+}
+.gallery-active-item figure {
+    width: 70%;
+    margin: 0 auto;
+}
 
+.gallery-cancel {
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 10%;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    font-size: 21px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+.gallery-cancel::before {
+    float: right;
+    color: #fff;
+    text-indent: 0;
+    content: '\f00d';
+}
+.gallery-cancel:hover::before{
+    color: #4e9526;
+}
 /*gallery end here */
 
 
@@ -1747,7 +1784,7 @@ label {
 
 .err {
     color: #f00;
-    font-size: 16px;
+    font-size: 12px;
     display: none;
 }
 
@@ -1998,7 +2035,7 @@ label {
         font-size: 12px;
     }
     .contact-us .contact a {
-        font-size: 26px;
+        font-size: 21px;
     }
     .testimonial .client figure {
         width: 80px;
