@@ -652,8 +652,12 @@ header .wrapper-large {
     flex-direction: column;
 }
 
+.menu-bar {
+    height: 5px;
+}
+
 .menu-bar:before {
-    width: 40px;
+    width: 20px;
     height: 2px;
     border-radius: 10px;
     float: right;
@@ -1056,26 +1060,10 @@ header .wrapper-large {
     text-transform: capitalize;
 }
 
-.testimonial .feedbacks {
-    padding-bottom: 50px;
-    display: flex;
-    overflow: scroll;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
 .testimonial .feedback {
-    flex-basis: 25%;
-    flex-shrink: 0;
-    margin-right: 10%;
+    flex-basis: 15%;
     display: flex;
     flex-direction: column;
-}
-
-.testimonial .feedback:last-child {
-    margin-right: 0;
 }
 
 .testimonial .feedback .description {
@@ -1115,28 +1103,40 @@ header .wrapper-large {
 }
 
 .controls {
+    display: none;
+}
+
+.slick-dots {
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn-control {
+.slick-dots li {
+    margin-right: 1%;
+}
+
+.slick-dots li:last-child {
+    margin-right: 0;
+}
+
+.slick-dots button {
     width: 10px;
     height: 10px;
     padding: 0;
     border: 2px solid #cdcdcd;
     border-radius: 50%;
-    margin-right: 2%;
     background-color: #fff;
     text-indent: -9999px;
 }
 
-.btn-control:last-child {
+.slick-dots li:last-child button {
     margin-right: 0;
 }
 
-.control-active,
-.btn-control:hover {
+.slick-dots li:hover button,
+.slick-active button {
     background-color: #4f9526;
 }
 
@@ -1341,7 +1341,7 @@ footer {
 
 .upper-footer .description {
     width: 80%;
-    padding-bottom: 15px;
+    padding: 0 0 15px 5%;
     color: #fff;
     line-height: 1.7;
 }
@@ -1386,10 +1386,13 @@ footer {
     flex-direction: column;
 }
 
+<<<<<<< HEAD
 .upper-footer .service:hover .dropDown {
     display: flex;
 }
 
+=======
+>>>>>>> dev
 .upper-footer .service .dropDown .page {
     padding: 5px 10%;
     margin-bottom: 0;
@@ -1591,32 +1594,38 @@ footer .copyright span::before {
     bottom: 15px;
 }
 
+<<<<<<< HEAD
+=======
+.removeScroll {
+    overflow-y: hidden;
+}
+
+>>>>>>> dev
 .gallery-active-item {
     width: 100%;
     height: 100%;
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
 }
 
 .gallery-active-item figure {
-    width: 70%;
+    width: 40%;
     margin: 0 auto;
+    position: relative;
 }
 
 .gallery-cancel {
     display: block;
     position: absolute;
-    top: 100px;
-    right: 10%;
+    top: -30px;
+    right: -40px;
     font-family: 'FontAwesome';
     font-weight: 900;
-    font-size: 21px;
+    font-size: 28px;
     text-indent: -9999px;
     cursor: pointer;
 }
@@ -1749,7 +1758,7 @@ label {
 }
 
 .user-input {
-    box-shadow: 1px 1px 10px 0 #cdcdcd;
+    border-bottom: 1px solid #eee;
     margin-top: 5px;
     display: flex;
     overflow: hidden;
@@ -1848,6 +1857,13 @@ label {
     header .upper-header {
         padding: 20px 0;
     }
+    .services-provided {
+        padding-bottom: 50px;
+    }
+    .services-provided .services {
+        order: 1;
+        padding-top: 40px;
+    }
     header .upper-header {
         flex-direction: column;
         justify-content: center;
@@ -1869,6 +1885,7 @@ label {
     }
     header .nav-items {
         width: 100%;
+        height: 100%;
         display: none;
         z-index: 1;
         position: absolute;
@@ -1884,16 +1901,16 @@ label {
         text-align: center;
     }
     header .menu {
-        margin-top: 10px;
+        margin-top: 4px;
     }
     .menu-active .menu-bar:first-child::before {
-        transform: translateY(16px) rotate(45deg);
+        transform: translateY(5px) rotate(45deg);
     }
     .menu-active .menu-bar:nth-child(2)::before {
         display: none;
     }
     .menu-active .menu-bar:nth-child(3)::before {
-        transform: translateY(-16px) rotate(-45deg);
+        transform: translateY(-5px) rotate(-45deg);
     }
     header .wrapper-large {
         padding: 5px 0;
@@ -1932,8 +1949,12 @@ label {
         padding: 80px 0;
     }
     .testimonial .feedback {
+<<<<<<< HEAD
         flex-basis: 80%;
         margin: 0 10%;
+=======
+        flex-basis: 40%;
+>>>>>>> dev
         justify-content: center;
         align-items: center;
     }
@@ -2039,7 +2060,7 @@ label {
     }
     .testimonial .client figure {
         width: 80px;
-        height: 55px;
+        height: 70px;
     }
     /* gallery start here */
     .gallery .gallery-item {
