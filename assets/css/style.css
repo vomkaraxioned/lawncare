@@ -1385,11 +1385,6 @@ footer {
     flex-direction: column;
 }
 
-.upper-footer .service:hover .dropDown {
-    display: flex;
-    z-index: 1;
-}
-
 .upper-footer .service .dropDown .page {
     padding: 5px 10%;
     margin-bottom: 0;
