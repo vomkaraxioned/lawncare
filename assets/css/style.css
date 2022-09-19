@@ -652,8 +652,12 @@ header .wrapper-large {
     flex-direction: column;
 }
 
+.menu-bar {
+    height: 5px;
+}
+
 .menu-bar:before {
-    width: 40px;
+    width: 20px;
     height: 2px;
     border-radius: 10px;
     float: right;
@@ -1019,7 +1023,7 @@ header .wrapper-large {
 
 .contact-us .contact a {
     color: #f8cf3d;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 900;
 }
 
@@ -1056,26 +1060,10 @@ header .wrapper-large {
     text-transform: capitalize;
 }
 
-.testimonial .feedbacks {
-    padding-bottom: 50px;
-    display: flex;
-    overflow: scroll;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
 .testimonial .feedback {
-    flex-basis: 25%;
-    flex-shrink: 0;
-    margin-right: 10%;
+    flex-basis: 15%;
     display: flex;
     flex-direction: column;
-}
-
-.testimonial .feedback:last-child {
-    margin-right: 0;
 }
 
 .testimonial .feedback .description {
@@ -1115,28 +1103,40 @@ header .wrapper-large {
 }
 
 .controls {
+    display: none;
+}
+
+.slick-dots {
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn-control {
+.slick-dots li {
+    margin-right: 1%;
+}
+
+.slick-dots li:last-child {
+    margin-right: 0;
+}
+
+.slick-dots button {
     width: 10px;
     height: 10px;
     padding: 0;
     border: 2px solid #cdcdcd;
     border-radius: 50%;
-    margin-right: 2%;
     background-color: #fff;
     text-indent: -9999px;
 }
 
-.btn-control:last-child {
+.slick-dots li:last-child button {
     margin-right: 0;
 }
 
-.control-active,
-.btn-control:hover {
+.slick-dots li:hover button,
+.slick-active button {
     background-color: #4f9526;
 }
 
@@ -1341,7 +1341,7 @@ footer {
 
 .upper-footer .description {
     width: 80%;
-    padding-bottom: 15px;
+    padding: 0 0 15px 5%;
     color: #fff;
     line-height: 1.7;
 }
@@ -1380,14 +1380,10 @@ footer {
 .upper-footer .service .dropDown {
     width: 100%;
     display: none;
+    z-index: 1;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     flex-direction: column;
-}
-
-.upper-footer .service:hover .dropDown {
-    display: flex;
-    z-index: 1;
 }
 
 .upper-footer .service .dropDown .page {
@@ -1552,6 +1548,7 @@ footer .copyright span::before {
 .gallery .gallery-items {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .gallery .gallery-item {
@@ -1588,6 +1585,50 @@ footer .copyright span::before {
 
 .gallery .image-name {
     bottom: 15px;
+}
+
+.removeScroll {
+    overflow-y: hidden;
+}
+
+.gallery-active-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-active-item figure {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gallery-cancel {
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: -40px;
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    font-size: 28px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.gallery-cancel::before {
+    float: right;
+    color: #fff;
+    text-indent: 0;
+    content: '\f00d';
+}
+
+.gallery-cancel:hover::before {
+    color: #4e9526;
 }
 
 
@@ -1707,7 +1748,7 @@ label {
 }
 
 .user-input {
-    box-shadow: 1px 1px 10px 0 #cdcdcd;
+    border-bottom: 1px solid #eee;
     margin-top: 5px;
     display: flex;
     overflow: hidden;
@@ -1734,7 +1775,8 @@ label {
     outline: none;
 }
 
-.form-section input:focus,
+.form-section input[type=text]:focus,
+.form-section input[type=email]:focus,
 .form-section textarea:focus {
     box-shadow: inset 1px 1px 5px 1px #f8cf3d;
     border: none;
@@ -1747,7 +1789,7 @@ label {
 
 .err {
     color: #f00;
-    font-size: 16px;
+    font-size: 12px;
     display: none;
 }
 
@@ -1805,6 +1847,13 @@ label {
     header .upper-header {
         padding: 20px 0;
     }
+    .services-provided {
+        padding-bottom: 50px;
+    }
+    .services-provided .services {
+        order: 1;
+        padding-top: 40px;
+    }
     header .upper-header {
         flex-direction: column;
         justify-content: center;
@@ -1826,6 +1875,7 @@ label {
     }
     header .nav-items {
         width: 100%;
+        height: 100%;
         display: none;
         z-index: 1;
         position: absolute;
@@ -1841,22 +1891,16 @@ label {
         text-align: center;
     }
     header .menu {
-        margin-top: 10px;
+        margin-top: 4px;
     }
-    .menu:hover .menu-bar:first-child::before,
-    .menu-active {
-        transform: translateY(16px) rotate(45deg);
+    .menu-active .menu-bar:first-child::before {
+        transform: translateY(5px) rotate(45deg);
     }
-    .menu:hover .menu-bar:nth-child(2)::before,
-    .menu-active {
+    .menu-active .menu-bar:nth-child(2)::before {
         display: none;
     }
-    .menu:hover .menu-bar:nth-child(3)::before,
-    .menu-active {
-        transform: translateY(-16px) rotate(-45deg);
-    }
-    .menu:hover~.nav-items {
-        display: flex;
+    .menu-active .menu-bar:nth-child(3)::before {
+        transform: translateY(-5px) rotate(-45deg);
     }
     header .wrapper-large {
         padding: 5px 0;
@@ -1896,7 +1940,6 @@ label {
     }
     .testimonial .feedback {
         flex-basis: 40%;
-        margin: 0 30%;
         justify-content: center;
         align-items: center;
     }
@@ -1998,11 +2041,11 @@ label {
         font-size: 12px;
     }
     .contact-us .contact a {
-        font-size: 26px;
+        font-size: 21px;
     }
     .testimonial .client figure {
         width: 80px;
-        height: 55px;
+        height: 70px;
     }
     /* gallery start here */
     .gallery .gallery-item {
