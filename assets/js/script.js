@@ -64,7 +64,6 @@ function validation() {
 if (document.title == "Contact") {
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        console.log(contactForm[0])
         validation();
     });
     contactForm[0].addEventListener("blur", (e) => {
