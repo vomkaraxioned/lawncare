@@ -2,16 +2,14 @@
 
 */
 /*global variables declared and initialize here*/
-<<<<<<< HEAD
-=======
 //variables for gallery modal
 const galleryItems = document.querySelectorAll(".gallery .gallery-item");
 let galleryModal, modal, galleryCancel, galleryFigure, galleryImage;
 //variables for form
 let userName, email, subject, message;
 const contactForm = document.querySelector(".form-section form[name=contact-form]");
-const errorBox = document.querySelectorAll(".err"),
-    emailRe = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
+const errorBox = document.querySelectorAll(".err");
+const emailRe = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
     textRe = /^[a-zA-Z\s]+$/;
 let valid;
 //variables for navbar
@@ -20,31 +18,22 @@ const navbar = document.querySelector("header .nav-items");
 menu.active = false;
 
 /*=====footer modal end here=====*/
->>>>>>> feature-js
 
 /*=====form validation start here=====*/
 function multiValidator(field, value, index, onlyText, isemail) {
     try {
-        if (!onlyText || !isemail) {
-            if (value.length == 0) {
-                valid = false;
-                throw "Please provide\t" + field;
-            }
-        } else if (onlyText) {
-            if (value > 20 || value < 2) {
-                valid = false;
-                throw field + "\tshould be more than 2 letters and less than 20 letters ";
-            }
-        } else if (onlyText) {
-            if (!textRe.test(value)) {
-                valid = false;
-                throw "only letters allowed";
-            }
-        } else if (isemail) {
-            if (!emailRe.test(email)) {
-                valid = false;
-                throw "Please provide valid email";
-            }
+        if (value.length == 0) {
+            valid = false;
+            throw "Please provide\t" + field;
+        } else if (!email && (value.length > 20 || value.length < 2)) {
+            valid = false;
+            throw field + "\tshould be more than 2 letters and less than 20 letters ";
+        } else if (onlyText && !textRe.test(value)) {
+            valid = false;
+            throw "only letters allowed";
+        } else if (isemail && !emailRe.test(email)) {
+            valid = false;
+            throw "Please provide valid email";
         }
         errorBox[index].style.display = "none";
     } catch (e) {
@@ -74,29 +63,21 @@ function validation() {
 }
 if (document.title == "Contact") {
     contactForm.addEventListener("submit", (e) => {
-<<<<<<< HEAD
-        y
-=======
         e.preventDefault();
->>>>>>> feature-js
+        console.log(contactForm[0])
         validation();
-        e.preventDefault();
     });
     contactForm[0].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        e.preventDefault();
     });
     contactForm[1].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        e.preventDefault();
     });
     contactForm[2].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        e.preventDefault();
     });
     contactForm[3].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        e.preventDefault();
     });
 }
 /*=====form validation end here=====*/
@@ -140,14 +121,6 @@ if (document.title == "Home") {
 /*=====slider ends here=====*/
 
 /*=====gallery modal start here=====*/
-function cancelBtnListener() {
-    galleryCancel = document.querySelector(".gallery-cancel");
-    galleryModal = document.querySelector(".gallery-active-item");
-    galleryCancel.addEventListener("click", () => {
-        document.children[0].classList.remove("removeScroll");
-        document.body.removeChild(galleryModal);
-    });
-}
 
 function galleryPopUp(item) {
     galleryModal = document.createElement("div");
@@ -163,7 +136,14 @@ function galleryPopUp(item) {
     galleryModal.appendChild(galleryFigure);
     document.body.appendChild(galleryModal);
     document.children[0].classList.add("removeScroll");
-    cancelBtnListener();
+    galleryImage = document.querySelector(".gallery-active-item figure img");
+    galleryModal = document.querySelector(".gallery-active-item");
+    galleryModal.addEventListener("click", (e) => {
+        if (e.target != galleryImage) {
+            document.children[0].classList.remove("removeScroll");
+            document.body.removeChild(galleryModal);
+        }
+    });
 }
 if (document.title == "Gallery") {
     galleryItems.forEach((ele) => {
@@ -181,7 +161,7 @@ menu.addEventListener("click", () => {
         menu.active = true;
         menu.classList.add("menu-active");
         navbar.style.display = "flex";
-        document.children[0].classList.add("removeScroll");
+        // document.children[0].classList.add("removeScroll");
     } else {
         menu.active = false;
         menu.classList.remove("menu-active");
