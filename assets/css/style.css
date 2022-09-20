@@ -1387,7 +1387,7 @@ footer {
 }
 
 .upper-footer .service:hover .dropDown {
-    display: flex;
+    display: none;
 }
 
 .upper-footer .service .dropDown .page {

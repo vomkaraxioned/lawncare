@@ -16,8 +16,6 @@ let valid;
 const menu = document.querySelector(".menu");
 const navbar = document.querySelector("header .nav-items");
 menu.active = false;
-//variable for accordion
-const accordion = document.querySelector(".upper-footer .services");
 /*=====footer modal end here=====*/
 
 /*=====form validation start here=====*/
