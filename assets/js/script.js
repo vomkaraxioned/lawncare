@@ -144,7 +144,7 @@ function galleryPopUp(item) {
         }
     });
 }
-if (document.title == "Gallery") {
+if (galleryItems) {
     galleryItems.forEach((ele) => {
         ele.addEventListener("click", () => {
             image = ele.children[0].children[0];
@@ -160,7 +160,7 @@ menu.addEventListener("click", () => {
         menu.active = true;
         menu.classList.add("menu-active");
         navbar.style.display = "flex";
-        // document.children[0].classList.add("removeScroll");
+        document.children[0].classList.add("removeScroll");
     } else {
         menu.active = false;
         menu.classList.remove("menu-active");

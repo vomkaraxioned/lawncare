@@ -2002,9 +2002,6 @@ label {
     .gallery .gallery-item {
         flex-basis: 50%;
     }
-    .gallery .gallery-item:last-child {
-        flex-basis: 100%;
-    }
     /* gallery end here */
     /* contact start */
     .gallery-banner .nav-item,
