@@ -7,7 +7,7 @@ const galleryItems = document.querySelectorAll(".gallery .gallery-item");
 let galleryModal, modal, galleryCancel, galleryFigure, galleryImage;
 //variables for form
 let userName, email, subject, message;
-const contactForm = document.querySelector(".form-section form[name=contact-form");
+const contactForm = document.querySelector(".form-section form[name=contact-form]");
 const errorBox = document.querySelectorAll(".err"),
     emailRe = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
     textRe = /^[a-zA-Z\s]+$/;
@@ -64,7 +64,6 @@ function validation() {
 if (document.title == "Contact") {
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        console.log(contactForm[0])
         validation();
     });
     contactForm[0].addEventListener("blur", (e) => {
