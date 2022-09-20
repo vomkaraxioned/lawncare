@@ -785,7 +785,7 @@ header .wrapper-large {
     align-items: center;
 }
 
-.service:nth-child(2) {
+.lawn-services .service:nth-child(2) {
     margin: 0 3%;
 }
 
@@ -1367,8 +1367,11 @@ footer {
 
 .upper-footer .page .service {
     padding-bottom: 10px;
-    position: relative;
     font-size: 11px;
+}
+
+.upper-footer .page .service a {
+    width: 80%;
 }
 
 .upper-footer .service::before {
@@ -1378,12 +1381,13 @@ footer {
 }
 
 .upper-footer .service .dropDown {
-    width: 100%;
+    width: 80%;
     display: none;
-    z-index: 1;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
     flex-direction: column;
+}
+
+.upper-footer .service:hover .dropDown {
+    display: flex;
 }
 
 .upper-footer .service .dropDown .page {
