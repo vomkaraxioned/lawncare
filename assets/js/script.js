@@ -2,6 +2,25 @@
 
 */
 /*global variables declared and initialize here*/
+<<<<<<< HEAD
+=======
+//variables for gallery modal
+const galleryItems = document.querySelectorAll(".gallery .gallery-item");
+let galleryModal, modal, galleryCancel, galleryFigure, galleryImage;
+//variables for form
+let userName, email, subject, message;
+const contactForm = document.querySelector(".form-section form[name=contact-form]");
+const errorBox = document.querySelectorAll(".err"),
+    emailRe = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
+    textRe = /^[a-zA-Z\s]+$/;
+let valid;
+//variables for navbar
+const menu = document.querySelector(".menu");
+const navbar = document.querySelector("header .nav-items");
+menu.active = false;
+
+/*=====footer modal end here=====*/
+>>>>>>> feature-js
 
 /*=====form validation start here=====*/
 function multiValidator(field, value, index, onlyText, isemail) {
@@ -55,7 +74,11 @@ function validation() {
 }
 if (document.title == "Contact") {
     contactForm.addEventListener("submit", (e) => {
+<<<<<<< HEAD
         y
+=======
+        e.preventDefault();
+>>>>>>> feature-js
         validation();
         e.preventDefault();
     });
