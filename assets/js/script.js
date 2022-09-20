@@ -2,8 +2,6 @@
 
 */
 /*global variables declared and initialize here*/
-<<<<<<< HEAD
-=======
 //variables for gallery modal
 const galleryItems = document.querySelectorAll(".gallery .gallery-item");
 let galleryModal, modal, galleryCancel, galleryFigure, galleryImage;
@@ -20,7 +18,6 @@ const navbar = document.querySelector("header .nav-items");
 menu.active = false;
 
 /*=====footer modal end here=====*/
->>>>>>> dev
 
 /*=====form validation start here=====*/
 function multiValidator(field, value, index, onlyText, isemail) {
@@ -72,19 +69,15 @@ if (document.title == "Contact") {
     });
     contactForm[0].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        // e.preventDefault();
     });
     contactForm[1].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        e.preventDefault();
     });
     contactForm[2].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        e.preventDefault();
     });
     contactForm[3].addEventListener("blur", (e) => {
         removeSpace(e.target);
-        e.preventDefault();
     });
 }
 /*=====form validation end here=====*/
