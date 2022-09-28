@@ -2169,6 +2169,9 @@ label {
         -ms-flex-align: center;
         align-items: center;
     }
+    header .menu-active~.nav-items{
+        display: flex;
+    }
     header .nav-item {
         width: 80%;
         margin: 10px 0;

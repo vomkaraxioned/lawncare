@@ -2,13 +2,13 @@
 
 */
 /*global variables declared and initialize here*/
+//variable for home
+const feedbacks = document.querySelector(".feedbacks");
 //variables for gallery modal
 const galleryItems = document.querySelectorAll(".gallery .gallery-item");
-let galleryModal, modal, galleryCancel, galleryFigure, galleryImage;
 //variables for form
 let userName, email, subject, message;
 const contactForm = document.querySelector(".form-section form[name=contact-form]");
-const errorBox = document.querySelectorAll(".err");
 const emailRe = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
     textRe = /^[a-zA-Z\s]+$/;
 let valid;
@@ -16,28 +16,28 @@ let valid;
 const menu = document.querySelector(".menu");
 const navbar = document.querySelector("header .nav-items");
 menu.active = false;
-/*=====footer modal end here=====*/
 
 /*=====form validation start here=====*/
-function multiValidator(field, value, index, onlyText, isemail) {
+function multiValidator(field, onlyText, isemail) {
     try {
-        if (value.length == 0) {
+        if (field.value.length == 0) {
             valid = false;
-            throw "Please provide\t" + field;
-        } else if (!email && (value.length > 20 || value.length < 2)) {
+            throw "Please provide\t" + field.name;
+        } else if (!isemail && (field.value.length > 20 || field.value.length < 2)) {
             valid = false;
-            throw field + "\tshould be more than 2 letters and less than 20 letters ";
-        } else if (onlyText && !textRe.test(value)) {
+            throw field.name + "\tshould be more than 2 letters and less than 20 letters ";
+        } else if (onlyText && !textRe.test(field.value)) {
             valid = false;
             throw "only letters allowed";
-        } else if (isemail && !emailRe.test(email)) {
+        } else if (isemail && !emailRe.test(field.value)) {
             valid = false;
             throw "Please provide valid email";
         }
-        errorBox[index].style.display = "none";
+
+        field.nextSibling.style.display = "none";
     } catch (e) {
-        errorBox[index].innerHTML = e;
-        errorBox[index].style.display = "block";
+        field.nextSibling.innerHTML = e;
+        field.nextSibling.style.display = "block";
     }
 }
 
@@ -47,41 +47,34 @@ function removeSpace(field) {
 
 function validation() {
     valid = true;
-    userName = document.forms["contact-form"]["name"].value;
-    email = document.forms["contact-form"]["email"].value;
-    subject = document.forms["contact-form"]["subject"].value;
-    message = document.forms["contact-form"]["message"].value;
-    multiValidator("username", userName, 0, true, false);
-    multiValidator("email", email, 1, false, true);
-    multiValidator("subject", subject, 2, false, false);
-    multiValidator("message", message, 3, false, false);
+    userName = document.querySelector("input[name=name]");
+    email = document.querySelector("input[name=email]");
+    subject = document.querySelector("input[name=subject]");
+    message = document.querySelector("textarea");
+    multiValidator(userName, true, false);
+    multiValidator(email, false, true);
+    multiValidator(subject, false, false);
+    multiValidator(message, false, false);
     if (valid) {
         alert("We contact you soon" + "\t" + userName);
         contactForm.reset();
     }
 }
-if (document.title == "Contact") {
+if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
         validation();
     });
-    contactForm[0].addEventListener("blur", (e) => {
+    for (i = 0; i < contactForm.length; i++) {
+        contactForm[i].addEventListener("blur", (e) => {
         removeSpace(e.target);
-    });
-    contactForm[1].addEventListener("blur", (e) => {
-        removeSpace(e.target);
-    });
-    contactForm[2].addEventListener("blur", (e) => {
-        removeSpace(e.target);
-    });
-    contactForm[3].addEventListener("blur", (e) => {
-        removeSpace(e.target);
-    });
+        });
+    }
 }
 /*=====form validation end here=====*/
 
 /*=====slider start here=====*/
-if (document.title == "Home") {
+if (feedbacks) {
     $(".feedbacks").slick({
         dots: true,
         infinite: false,
@@ -121,6 +114,7 @@ if (document.title == "Home") {
 /*=====gallery modal start here=====*/
 
 function galleryPopUp(item) {
+    let galleryModal, galleryCancel, galleryFigure, galleryImage;
     galleryModal = document.createElement("div");
     galleryFigure = document.createElement("figure");
     galleryImage = document.createElement("img");
@@ -134,8 +128,6 @@ function galleryPopUp(item) {
     galleryModal.appendChild(galleryFigure);
     document.body.appendChild(galleryModal);
     document.children[0].classList.add("removeScroll");
-    galleryImage = document.querySelector(".gallery-active-item figure img");
-    galleryModal = document.querySelector(".gallery-active-item");
     galleryModal.addEventListener("click", (e) => {
         if (e.target != galleryImage) {
             document.children[0].classList.remove("removeScroll");
@@ -158,13 +150,11 @@ menu.addEventListener("click", () => {
     if (!menu.active) {
         menu.active = true;
         menu.classList.add("menu-active");
-        navbar.style.display = "flex";
         document.children[0].classList.add("removeScroll");
     } else {
         menu.active = false;
         menu.classList.remove("menu-active");
         document.children[0].classList.remove("removeScroll");
-        navbar.style.display = "none";
     }
 });
 /*=====nav items ends  here=====*/
